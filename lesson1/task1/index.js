@@ -6,4 +6,4 @@ const greetingElement = React.createElement(
   'Hello, React'
 );
 
-ReactDOM.render(createElement, rootElement);
+ReactDOM.render(greetingElement, rootElement);
