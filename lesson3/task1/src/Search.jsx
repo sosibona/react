@@ -5,7 +5,7 @@ import React from 'react';
 
 // const rootElement = document.querySelector('#root');
 
-const Search = (props) => (
+export default (props) => (
 <div className="search">
   <h1 className="search__title">Hello, {props.name}. What to search for you?</h1>
     <div className="search__field">
@@ -20,4 +20,3 @@ const Search = (props) => (
 //   rootElement
 // );
 
-export {Search};
