@@ -1,5 +1,5 @@
 import React from 'react';
-import { Greeting } from './Greeting'
+import Greeting from './Greeting'
 
 const user = {
   firstName: 'Taras',
@@ -7,10 +7,10 @@ const user = {
   birthDate: new Date('1987-03-05')
 }
 
-export const App = () => (
+const App = () => (
   <Greeting
   user={user}
   />
 )
 
-// export default App;
+export default App;
