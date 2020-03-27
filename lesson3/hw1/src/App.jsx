@@ -9,9 +9,9 @@ import Greeting from './Greeting'
 
 const App = () => (
   <Greeting
-  firstName="Taras"
-  lastName="Test"
-  birthDate={new Date('2001-01-01T11:11:11.819Z')}
+  firstName="John"
+  lastName="Doe"
+  birthDate={new Date('1989')}
   />
 )
 

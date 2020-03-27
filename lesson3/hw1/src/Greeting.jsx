@@ -4,9 +4,8 @@ import { getAge } from './getAge';
 
 
 const Greeting = (props) => {
-  console.log()
   return (
-  <h1 className="greening">My name is {props.firstName} {props.lastName}. I'm {getAge(props.birthDate)} years old</h1>
+  <div className="greening">My name is {props.firstName} {props.lastName}. I'm {getAge(props.birthDate)} years old</div>
   )
 }
 
