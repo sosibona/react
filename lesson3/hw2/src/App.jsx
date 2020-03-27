@@ -10,7 +10,7 @@ const userData = {
 
 const App = () => (
   <Profile
-  user={userData}
+  userData={userData}
   />
 )
 
