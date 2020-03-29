@@ -7,7 +7,7 @@ class Toggler extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isSwitchOn: '',
+      isSwitchOn: false,
     }
   }
 
