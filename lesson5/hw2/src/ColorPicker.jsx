@@ -10,7 +10,6 @@ class ColorPicker extends Component {
   }
 
   setTitle = (color) => {
-    color = color.toUpperCase();
     this.setState({
       color: color,
     })
@@ -32,17 +31,17 @@ class ColorPicker extends Component {
         <div>
           <button 
             className="picker__button picker__button_coral" 
-            onMouseEnter={this.setTitle.bind(this, 'coral')}
+            onMouseEnter={this.setTitle.bind(this, 'Coral')}
             onMouseLeave={this.reseTitle}    
           ></button>
           <button 
             className="picker__button picker__button_aqua" 
-            onMouseEnter={this.setTitle.bind(this, 'aqua')}
+            onMouseEnter={this.setTitle.bind(this, 'Aqua')}
             onMouseLeave={this.reseTitle}  
           ></button>
           <button 
             className="picker__button picker__button_bisque" 
-            onMouseEnter={this.setTitle.bind(this, 'bisque')}
+            onMouseEnter={this.setTitle.bind(this, 'Bisque')}
             onMouseLeave={this.reseTitle}
           ></button>
         </div>
