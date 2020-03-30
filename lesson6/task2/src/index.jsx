@@ -6,7 +6,7 @@ import './index.scss';
 const root = document.querySelector('#root')
 
 ReactDOM.render(
-  <Mailbox unreadMessage={[1]} />,
+  <Mailbox unreadMessages={[1]} />,
   root
 );
 
