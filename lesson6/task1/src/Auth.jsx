@@ -24,15 +24,15 @@ class Auth extends Component {
 
   render() {
 
-    const button = this.state.isLoggedIn
-      ? <button onClick={this.handleLogout}>Logout</button>
-      : <button onClick={this.handleLogin}>Login</button>;
+    // const button = this.state.isLoggedIn
+    //   ? <button onClick={this.handleLogout}>Logout</button>
+    //   : <button onClick={this.handleLogin}>Login</button>;
 
-    // if (this.state.isLoggedIn) {
-    //   button = <button onClick={this.handleLogout}>Logout</button>;
-    // } else {
-    //   button = <button onClick={this.handleLogin}>Login</button>;
-    // }
+    if (this.state.isLoggedIn) {
+      button = <button onClick={this.handleLogout}>Logout</button>;
+    } else {
+      button = <button onClick={this.handleLogin}>Login</button>;
+    }
 
     return (
       <div className="panel">
