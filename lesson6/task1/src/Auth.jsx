@@ -24,6 +24,8 @@ class Auth extends Component {
 
   render() {
 
+    let button;
+
     // const button = this.state.isLoggedIn
     //   ? <button onClick={this.handleLogout}>Logout</button>
     //   : <button onClick={this.handleLogin}>Login</button>;
@@ -37,9 +39,7 @@ class Auth extends Component {
     return (
       <div className="panel">
         <Greeting isLoggedIn={this.state.isLoggedIn}/>
-        {this.state.isLoggedIn
-          ? <button onClick={this.handleLogout}>Logout</button>
-          : <button onClick={this.handleLogin}>Login</button>}
+        {button}
       </div>
     )
   }
