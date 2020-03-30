@@ -5,11 +5,8 @@ const text1 = 'Hello, world!';
 const text2 = 'Another exciting text.';
 
 class Page extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      text: ''
-    }
+  state = {
+    text: null
   }
 
   setText = text => {
