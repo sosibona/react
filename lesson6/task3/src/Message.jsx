@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Messages = ({ text }) => {
+const Message = ({ text }) => {
   if (!text) {
     return null;
   }
@@ -11,4 +11,4 @@ const Messages = ({ text }) => {
   )
 }
 
-export default Messages;
+export default Message;

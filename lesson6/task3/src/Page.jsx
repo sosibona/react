@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Messages from './Messages';
+import Message from './Message';
 
 const text1 = "Hello, world!";
 const text2 = "Another exciting text.";
@@ -18,7 +18,7 @@ class Page extends Component {
   render() {
     return (
       <div className="page">
-        <Messages text={this.state.text}/ >
+        <Message text={this.state.text}/ >
         <div className="actions">
           <button className="btn" onClick={() => this.setText(text1)}>Text 1</button>
           <button className="btn" onClick={() => this.setText(text2)}>Text 2</button>
