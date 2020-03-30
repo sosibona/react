@@ -30,16 +30,16 @@ class Auth extends Component {
     //   ? <button onClick={this.handleLogout}>Logout</button>
     //   : <button onClick={this.handleLogin}>Login</button>;
 
-    // if (this.state.isLoggedIn) {
-    //   button = <button onClick={this.handleLogout}>Logout</button>;
-    // } else {
-    //   button = <button onClick={this.handleLogin}>Login</button>;
-    // }
+    if (this.state.isLoggedIn) {
+      button = <button onClick={this.handleLogout}>Logout</button>;
+    } else {
+      button = <button onClick={this.handleLogin}>Login</button>;
+    }
 
     return (
       <div className="panel">
         <Greeting isLoggedIn={this.state.isLoggedIn}/>
-        {button}
+        <div>{button}</div>
       </div>
     )
   }
