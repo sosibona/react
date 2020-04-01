@@ -36,7 +36,6 @@ class Auth extends Component {
       return <Spinner size={'30px'}/>
     }else {
       return <Logout onLogout={this.onLogout} />
-      // return <button className="logout btn" onClick={this.onLogout}>Logout</button>
     }
   }
 }
