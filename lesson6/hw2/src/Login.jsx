@@ -4,7 +4,7 @@ const Login = props => {
   return (
     <button 
       className="login btn" 
-      onClick={props.login}
+      onClick={props.onLogin}
     >
       Login
     </button>

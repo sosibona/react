@@ -30,12 +30,12 @@ class Auth extends Component {
 
   render() {
     if (!this.state.isLogin) {
-      return <Login login={this.onLogin}/>
+      return <Login onLogin={this.onLogin}/>
     } 
     if (this.state.isLoading) {
       return <Spinner size={'30px'}/>
     }else {
-      return <Logout logout={this.onLogout} />
+      return <Logout onLogout={this.onLogout} />
       // return <button className="logout btn" onClick={this.onLogout}>Logout</button>
     }
   }
