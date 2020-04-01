@@ -15,22 +15,24 @@ class UsersList extends Component {
   }
 
   render() {
-    const userList = this.props.users.slice().sort((a,b) => {
-      return this.state.isSorting === 'ASC' ? (a.age - b.age) : (b.age - a.age)
-    }).map(user => {
-    return (
-      <User key={user.id} {...user}/>
-      // <li className="user" key={user.id}>
-      //   <span className="user__name">{user.name}</span>
-      //   <span className="user__age">{user.age}</span>
-      // </li>
-      )
-    })
+    let userList;
+    if (this.state.isSorting) {
+      userList = this.props.users.slice().sort((a,b) => {
+        return this.state.isSorting === 'ASC' ? (a.age - b.age) : (b.age - a.age)
+      });
+    } else {
+      userList = this.props.users;
+    }
+     
     return (
           <>
             <button className="btn" onClick={this.toggleSort}>{this.state.isSorting || '-'}</button>
             <ul className="users">
-              {userList}
+              {userList.map(user => {
+                return (
+                  <User key={user.id} {...user}/>
+                )
+              })}
             </ul>
           </>
     )
