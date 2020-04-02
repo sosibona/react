@@ -1,14 +1,11 @@
 import React from "react";
 
 const Pagination = props => {
-  console.log(props);
-
   const isPrevPageAvailable = props.currentPage <= 1;
   const isNextPageAvailable =
     Math.ceil(props.totalItems / (props.currentPage * props.itemsPerPage)) ===
     1;
 
-  console.log(isNextPageAvailable);
   return (
     <div className="pagination">
       <button
