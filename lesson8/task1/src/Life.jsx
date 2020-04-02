@@ -7,20 +7,15 @@ class Life extends Component {
   }
 
   componentDidMount() {
-    fetch('https://api.github.com/users/sosibona')
-      .then(response => response.json())
-      .then(data => console.log(data))
     console.log('componentDidMount: API calls, subscriptions');
   }
 
   shouldComponentUpdate(nextProps, nextState) {
-    console.log('next: ', nextProps, nextState)
     console.log(`componentDidUpdate(prevProps, prevState): some updates based on new props`);
     return true;
   }
 
   componentDidUpdate(prevProps, prevState) {
-    console.log('previos: ', prevProps, prevState)
     console.log(`componentDidMount: API calls, subscriptions`);
   }
 
