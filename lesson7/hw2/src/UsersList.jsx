@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import User from "./User";
 import Pagination from "./Pagination";
 
-class UserList extends Component {
+class UsersList extends Component {
   state = {
     currentPage: 0,
     itemsPerPage: 3
@@ -42,4 +42,4 @@ class UserList extends Component {
   }
 }
 
-export default UserList;
+export default UsersList;
