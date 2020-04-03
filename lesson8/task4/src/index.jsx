@@ -6,4 +6,4 @@ import "./index.scss";
 
 const root = document.querySelector("#root");
 
-ReactDOM.render(<User user="facebook"/>, root);
+ReactDOM.render(<User userId="facebook"/>, root);
