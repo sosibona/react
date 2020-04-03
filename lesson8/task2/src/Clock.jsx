@@ -4,7 +4,7 @@ import moment from "moment";
 const getTime = timezone => {
   const currentTimeZone = new Date().getTimezoneOffset() / 60;
   const locationTimeZone = new Date(
-    new Date().setHours(new Date().getHours() + currentTimeZone + 1 + timezone)
+    new Date().setHours(new Date().getHours() + currentTimeZone + timezone)
   );
   return locationTimeZone;
 };
