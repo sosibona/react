@@ -15,7 +15,6 @@ class ConnectionStatus extends Component {
     window.removeEventListener("offline", this.onOffline);
   }
 
-
   onOnline = () => {
     this.setState({
       isOnline: true
@@ -24,16 +23,16 @@ class ConnectionStatus extends Component {
 
   onOffline = () => {
     this.setState({
-      isOnline: false,
+      isOnline: false
     });
   };
 
-  
-
-
   render() {
-    if (this.state.isOnline) return <div className="status">Online</div>;
-    return <div className="status status_offline">Offline</div>;
+    if (this.state.isOnline) {
+      return <div className="status">Online</div>;
+    } else {
+      return <div className="status status_offline">Offline</div>;
+    }
   }
 }
 
