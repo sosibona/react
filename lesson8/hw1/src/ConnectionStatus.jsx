@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 
 class ConnectionStatus extends Component {
+  
   state = {
     isOnline: true
   };
