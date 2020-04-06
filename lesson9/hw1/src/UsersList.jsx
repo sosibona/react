@@ -22,7 +22,13 @@ class UsersList extends React.Component {
       });
     return (
       <div>
-        <Filter filterText={this.state.filterText} count={usersList.length} onChange={this.onChange} />
+        <div className="filter">
+          <Filter
+            filterText={this.state.filterText}
+            count={usersList.length}
+            onChange={this.onChange}
+          />
+        </div>
         <ul className="users">{usersList}</ul>
       </div>
     );
