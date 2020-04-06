@@ -2,7 +2,7 @@ import React from "react";
 import User from "./User";
 import Filter from "./Filter";
 
-class UserList extends React.Component {
+class UsersList extends React.Component {
   state = {
     filterText: "",
     count: this.props.users.length,
@@ -29,4 +29,4 @@ class UserList extends React.Component {
   }
 }
 
-export default UserList;
+export default UsersList;
