@@ -1,37 +1,38 @@
-import React, { Component } from "react";
-import SearchBar from "./SearchBar";
-import ProductTable from "./ProductTable";
+import React from 'react';
+import SearchBar from './SearchBar.jsx';
+import ProductTable from './ProductTable.jsx';
 
-class FilterableProductTable extends Component {
+class FilterableProductTable extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      filterText: "",
-      inStockOnly: false,
+      filterText: '',
+      inStockOnly: false
     };
   }
 
-  handleChange = (event) => {
-    event.persist();
-    const { type } = event.target;
-    if (type === "checkbox") {
-      this.setState({
-        inStockOnly: !this.state.inStockOnly,
-      });
-    } else {
-      this.setState({
-        filterText: event.target.value,
-      });
-    }
-  };
+  handleFilterTextChange = (filterText) => {
+    this.setState({
+      filterText: filterText
+    });
+  }
+
+  handleInStockChange = (inStockOnly) => {
+    this.setState({
+      inStockOnly: inStockOnly
+    })
+  }
 
   render() {
+
+    const { filterText, inStockOnly } = this.state;
     return (
       <div>
         <SearchBar
-          filterText={this.state.filterText}
-          inStockOnly={this.state.inStockOnly}
-          handleChange={this.handleChange}
+          filterText={filterText}
+          inStockOnly={inStockOnly}
+          onFilterTextChange={this.handleFilterTextChange}
+          onInStockChange={this.handleInStockChange}
         />
         <ProductTable
           products={this.props.products}
@@ -42,5 +43,6 @@ class FilterableProductTable extends Component {
     );
   }
 }
+
 
 export default FilterableProductTable;

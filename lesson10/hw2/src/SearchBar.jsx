@@ -1,20 +1,37 @@
-import React from "react";
+import React from 'react';
 
-const ProductRow = ({ filterText, inStockOnly, handleChange }) => {
-  return (
-    <form>
-      <input
-        type="text"
-        placeholder="Search..."
-        value={filterText}
-        onChange={handleChange}
-      />
-      <p>
-        <input type="checkbox" checked={inStockOnly} onChange={handleChange} />{" "}
-        Only show products in stock
-      </p>
-    </form>
-  );
-};
+class SearchBar extends React.Component {
 
-export default ProductRow;
+  handleFilterTextChange = (e) => {
+    this.props.onFilterTextChange(e.target.value);
+  }
+
+  handleInStockChange = (e) => {
+    this.props.onInStockChange(e.target.checked);
+  }
+
+  render() {
+    const { filterText, inStockOnly } = this.props;
+    return (
+      <form>
+        <input
+          type="text"
+          placeholder="Search..."
+          value={filterText}
+          onChange={this.handleFilterTextChange}
+        />
+        <p>
+          <input
+            type="checkbox"
+            checked={inStockOnly}
+            onChange={this.handleInStockChange}
+          />
+          {' '}
+            Only show products in stock
+          </p>
+      </form>
+    );
+  }
+}
+
+export default SearchBar;
