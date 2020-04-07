@@ -28,7 +28,10 @@ function tryConvert(temperature, convert) {
 class Calculator extends Component {
   constructor(props) {
     super(props);
-    this.state = { temperature: "", scale: "c" };
+    this.state = { 
+      temperature: "", 
+      scale: "c" 
+    };
   }
 
   handleCelsiusChange = (event) => {
@@ -46,8 +49,9 @@ class Calculator extends Component {
   };
 
   render() {
-    const celsius = scaleNames[this.props.scale] === 'f' ? tryConvert(temperature, toCelsius) : this.state.temperature;
-    const fahrenheit = scaleNames[this.props.scale] === 'c' ? tryConvert(temperature, toFahrenheit) : this.state.temperature;
+    const celsius = this.state.scale === 'f' ? tryConvert(this.state.temperature, toCelsius) : this.state.temperature;
+    const fahrenheit = this.state.scale === 'c' ? tryConvert(this.state.temperature, toFahrenheit) : this.state.temperature;
+    console.log(celsius, fahrenheit)
     return (
       <div>
         <TemperatureInput
