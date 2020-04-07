@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProductList from './ProductList';
+import ProductsList from './ProductsList';
 import CartTitle from './CartTitle';
 
 
@@ -23,7 +23,7 @@ class ShoppingCart extends Component {
     return (
       <div className="column">
         <CartTitle userName={this.props.userData.firstName} count={this.state.cartItems.length} />
-        <ProductList cartItems={this.state.cartItems}/>
+        <ProductsList cartItems={this.state.cartItems}/>
       </div>
     )
   }

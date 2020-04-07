@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-class ProductList extends Component {
+class ProductsList extends Component {
   // state = {
   //   cartItems: [
   //     {
@@ -37,4 +37,4 @@ class ProductList extends Component {
   }
 }
 
-export default ProductList;
+export default ProductsList;
