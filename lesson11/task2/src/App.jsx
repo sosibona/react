@@ -22,7 +22,7 @@ class App extends Component {
     return (
       <div className="app">
         <button className="btn" onClick={this.showDialog }>Show dialog</button>
-        <Dialog isOpen={this.state.isOpen} title="some title" hideDialog={this.hideDialog}>
+        <Dialog isOpen={this.state.isOpen} title="some title" onClose={this.hideDialog}>
           <p>some text</p>
         </Dialog>
       </div>
