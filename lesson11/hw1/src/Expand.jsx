@@ -8,8 +8,13 @@ const Expand = ({ title, children, toggleContent, isOpen }) => {
       <div className="expand__header">
         <span className="expand__title">{title}</span>
         <button className="expand__toggle-btn" onClick={toggleContent}>
-          <span className={isOpen ? "hidden" : ""}>{downChevron}</span>
-          <span className={isOpen ? "" : "hidden"}>{upChevron}</span>
+          {/* <span className={isOpen ? "hidden" : ""}>{downChevron}</span>
+          <span className={isOpen ? "" : "hidden"}>{upChevron}</span> */}
+          {isOpen ? (
+            <i className="fas fa-chevron-up" />
+          ) : (
+            <i className="fas fa-chevron-down" />
+          )}
           {/* {isOpen ? <span>{upChevron}</span> : <span>{downChevron}</span>} */}
         </button>
       </div>
