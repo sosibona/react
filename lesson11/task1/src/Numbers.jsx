@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 
-class Number extends PureComponent {
+class Numbers extends PureComponent {
   render() {
     const { title, number } = this.props;
     return (
@@ -12,4 +12,4 @@ class Number extends PureComponent {
   }
 }
 
-export default Number;
+export default Numbers;
