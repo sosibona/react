@@ -13,11 +13,13 @@ const Expand = ({ title, children, toggleContent, isOpen }) => {
           {/* {isOpen ? <span>{upChevron}</span> : <span>{downChevron}</span>} */}
         </button>
       </div>
-      <div className="expand__content">
-        {/* <!-- ... expand content (children) --> */}
+      {isOpen && (
+        <div className="expand__content">
+          {/* <!-- ... expand content (children) --> */}
 
-        {isOpen && children}
-      </div>
+          {children}
+        </div>
+      )}
     </div>
   );
 };
