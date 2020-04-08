@@ -2,16 +2,6 @@ import React, { Component } from "react";
 import Expand from "./Expand";
 
 class App extends Component {
-  state = {
-    isOpen: false,
-  };
-
-  toggleContent = () => {
-    this.setState({
-      isOpen: !this.state.isOpen,
-    });
-  };
-
   render() {
     const content = (
       <p>
@@ -21,7 +11,7 @@ class App extends Component {
     );
     return (
       <div className="app">
-        <Expand title="Some title" toggleContent={this.toggleContent} isOpen={this.state.isOpen}>
+        <Expand title="Some title">
           {content}
         </Expand>
       </div>
