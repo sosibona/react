@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  height: 300px;
+  margin:  auto;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.input {
+  height: 40px;
+  width: 100%;
+  background-color: #ddd;
+  border: none;
+  font-size: 24px;
+
+  &::placeholder {
+    font-size: 14px;
+    line-height: 40px;
+  }
+}
+
