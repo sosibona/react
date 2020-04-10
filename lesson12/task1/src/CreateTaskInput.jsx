@@ -1,12 +1,43 @@
-import React from "react";
+import React, { Component } from "react";
 
-const CreateTaskInput = ({handleChange, createTask, newTask}) => {
-  return (
-    <div className="create-task">
-      <input className="create-task__input" type="text" value={newTask} onChange={handleChange}/>
-      <button className="btn create-task__btn" onClick={createTask}>Create</button>
-    </div>
-  );
-};
+class CreateTaskInput extends Component {
+    state = {
+      value: "",
+    };
+    // this.handleChange = this.handleChange.bind(this);
+    // this.handleTaskCreate = this.handleTaskCreate.bind(this)
+
+  handleChange = (event) => {
+    this.setState({
+      value: event.target.value,
+    });
+  };
+
+  handleTaskCreate = () => {
+    this.props.onCreate(this.state.value);
+    this.setState({
+      value: '',
+    })
+  };
+
+  render() {
+    return (
+      <div className="create-task">
+        <input
+          className="create-task__input"
+          type="text"
+          value={this.state.value}
+          onChange={this.handleChange}
+        />
+        <button
+          className="btn create-task__btn"
+          onClick={this.handleTaskCreate}
+        >
+          Create
+        </button>
+      </div>
+    );
+  }
+}
 
 export default CreateTaskInput;

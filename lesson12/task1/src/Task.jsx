@@ -2,6 +2,7 @@ import React from "react";
 import classNames from 'classnames'
 
 const Task = ({id, done, text, onChange, onDelete}) => {
+  
   const listItemClass = classNames('list-item', {'list-item_done': done});
   return (
     <li className={listItemClass}>

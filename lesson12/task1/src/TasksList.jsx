@@ -1,77 +1,64 @@
 import React, { Component } from "react";
 import Task from "./Task";
 import CreateTaskInput from "./CreateTaskInput";
+import {
+  createTask,
+  fetchTasksList,
+  updateTask,
+  deleteTask,
+} from "./taskGateway";
 
 class TasksList extends Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-    this.createTask = this.createTask.bind(this);
-    this.handleTaskStatusChange = this.handleTaskStatusChange.bind(this);
-    this.deleteTask = this.deleteTask.bind(this);
-    this.state = {
-      tasks: [
-        { text: "Buy milk", done: false, id: 1 },
-        { text: "Pick up Tom", done: false, id: 2 },
-        { text: "Visit party", done: false, id: 3 },
-        { text: "Visit doctor", done: true, id: 4 },
-        { text: "Buy meat", done: true, id: 5 },
-      ],
-      newTask: "",
-    };
+  state = {
+    tasks: [],
+    // { id: "1", done: false, text: "text 1" },
+    // { id: "2", done: false, text: "text 2" },
+    // { id: "3", done: false, text: "text 3" },
+    // { id: "4", done: false, text: "text 4" },
+    // { id: "5", done: true, text: "text 5" },
+    // { id: "6", done: true, text: "text 6" },
+  };
+
+  componentDidMount() {
+    this.fetchTask();
   }
 
-  createTask = () => {
-    const newTask = {
-      text: this.state.newTask,
-      done: false,
-      id: Math.random(),
-    };
-    this.state.tasks.push(newTask);
-    this.setState({
-      tasks: this.state.tasks,
-      newTask: "",
+  fetchTask = () => {
+    fetchTasksList().then((taskList) => {
+      console.log(taskList);
+      return this.setState({
+        tasks: taskList,
+      });
     });
   };
 
-  handleChange = (event) => {
-    const newTask = event.target.value;
-    this.setState({
-      newTask: newTask,
-    });
+  onCreate = (text) => {
+    const newTask = {
+      text,
+      done: false,
+    };
+
+    createTask(newTask).then(() => this.fetchTask());
   };
 
   handleTaskStatusChange = (id) => {
-    const updatedTasks = this.state.tasks.map((task) => {
-      if (task.id === id) {
-        return {
-          ...task,
-          done: !task.done,
-        };
-      }
-      return task;
-    });
-    this.setState({
-      tasks: updatedTasks,
-    });
+    const { done, text } = this.state.tasks.find((task) => task.id === id);
+    const updatedTask = {
+      text,
+      done: !done,
+    };
+    updateTask(id, updatedTask).then(() => this.fetchTask());
   };
 
-  deleteTask = (id) => {
-    const updeateTask = this.state.tasks.filter((task) => task.id !== id);
-    this.setState({
-      tasks: updeateTask,
-    })
+  handleTaskDelete = (id) => {
+    deleteTask(id).then(() => this.fetchTask());
   };
 
   render() {
     const sortedTask = this.state.tasks.slice().sort((a, b) => a.done - b.done);
     return (
       <div className="todo-list">
-        <CreateTaskInput
-          handleChange={this.handleChange}
-          createTask={this.createTask}
-          newTask={this.state.newTask}
-        />
+        <CreateTaskInput onCreate={this.onCreate} />
         <ul className="list">
           {sortedTask.map((task) => {
             return (
@@ -79,7 +66,7 @@ class TasksList extends Component {
                 key={task.id}
                 {...task}
                 onChange={this.handleTaskStatusChange}
-                onDelete={this.deleteTask}
+                onDelete={this.handleTaskDelete}
               />
             );
           })}
