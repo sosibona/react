@@ -16,7 +16,7 @@ const Products = () => {
       </ul>
       <Switch>
         <Route exact path="/products">
-          <span>Select product</span>
+        <span>Select a product please</span>
         </Route>
         <Route path="/products/:productId" component={Product} />
       </Switch>
