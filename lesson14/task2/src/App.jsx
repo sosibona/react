@@ -11,17 +11,17 @@ class App extends Component {
           <BrowserRouter>
             <ul className="navigation">
               <li className="navigation__item">
-                <Link to="/users/github">Github</Link>
+                <Link to="/github">Github</Link>
               </li>
               <li className="navigation__item">
-                <Link to="/users/facebook">Facebook</Link>
+                <Link to="/facebook">Facebook</Link>
               </li>
             </ul>
             <Switch>
-              <Route exact path="/users">
+              <Route exact path="/">
                 <span>Select a user please</span>
               </Route>
-              <Route path="/users/:userId" component={User} />
+              <Route path="/:userId" component={User} />
             </Switch>
           </BrowserRouter>
         </div>
