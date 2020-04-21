@@ -11,6 +11,12 @@ class User extends Component {
     this.fetchUser(this.props.match.params.userId);
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.match.params.userId !== prevProps.match.params.userId) {
+      this.fetchUser(this.props.match.params.userId);
+    }
+  }
+
   fetchUser = (userId) => {
     fetch(`${url}/${userId}`)
       .then((response) => response.json())
